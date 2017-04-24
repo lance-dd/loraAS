@@ -100,7 +100,7 @@ func (h *MQTTHandler) SendDataUp(payload DataUpPayload) error {
 	}
 
 	topic := fmt.Sprintf("application/%d/node/%s/rx", payload.ApplicationID, payload.DevEUI)
-	log.WithField("topic", topic).Info("handler/mqtt: publishing data-up payload")
+	log.WithField("topic", topic).Info("handler/mqtt: publishing data-up payload. payload.Data is %s ", string(payload.Data))
 	if token := h.conn.Publish(topic, 0, false, b); token.Wait() && token.Error() != nil {
 		return fmt.Errorf("handler/mqtt: publish data-up payload error: %s", err)
 	}

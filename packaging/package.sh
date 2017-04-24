@@ -35,7 +35,7 @@ PREINSTALL_SCRIPT=$TARGET/pre-install.sh
 POSTUNINSTALL_SCRIPT=$TARGET/post-uninstall.sh
 
 LICENSE=MIT
-VERSION=`git describe --always`
+VERSION=`1`
 URL=https://docs.loraserver.io/$NAME/
 MAINTAINER=info@brocaar.com
 VENDOR="LoRa Server project"
@@ -54,7 +54,6 @@ COMMON_FPM_ARGS="\
 	--after-remove $POSTUNINSTALL_SCRIPT \
 	--architecture $ARCH \
 	--name $NAME \
-	--version $VERSION \
 	--depends openssl"
 
 if [ ! -f $DIST_FILE_PATH ]; then
