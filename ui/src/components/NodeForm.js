@@ -71,7 +71,7 @@ class NodeForm extends Component {
   onChange(field, e) {
     let node = this.state.node;
     if (e.target.type === "number") {
-      node[field] = parseInt(e.target.value, 10); 
+      node[field] = parseInt(e.target.value, 10);
     } else if (e.target.type === "checkbox") {
       node[field] = e.target.checked;
     } else {
@@ -105,7 +105,7 @@ class NodeForm extends Component {
             </div>
             <div className="form-group">
               <label className="control-label" htmlFor="devEUI">Device EUI</label>
-              <input className="form-control" id="devEUI" type="text" placeholder="0000000000000000" pattern="[A-Fa-f0-9]{16}" required disabled={this.state.devEUIDisabled} value={this.state.node.devEUI || ''} onChange={this.onChange.bind(this, 'devEUI')} /> 
+              <input className="form-control" id="devEUI" type="text" placeholder="0000000000000000" pattern="[A-Fa-f0-9]{16}" required disabled={this.state.devEUIDisabled} value={this.state.node.devEUI || ''} onChange={this.onChange.bind(this, 'devEUI')} />
             </div>
             <div className="form-group">
               <label className="control-label" htmlFor="appEUI">Application EUI</label>
@@ -216,7 +216,7 @@ class NodeForm extends Component {
               <input className="form-control" id="adrInterval" type="number" disabled={this.state.node.useApplicationSettings} required value={this.state.node.adrInterval || 0} onChange={this.onChange.bind(this, 'adrInterval')} />
               <p className="help-block">
                 The interval (of frames) after which the network-server will ask the node to change data-rate and / or TX power
-                if it can change to a better data-rate or lower TX power. Setting this to 0 will disable ADR. 
+                if it can change to a better data-rate or lower TX power. Setting this to 0 will disable ADR.
               </p>
             </div>
             <div className="form-group">

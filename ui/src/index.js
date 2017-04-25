@@ -16,6 +16,7 @@ import UpdateApplicationUser from "./views/applications/UpdateApplicationUser";
 import ListNodes from './views/nodes/ListNodes';
 import UpdateNode from './views/nodes/UpdateNode';
 import CreateNode from "./views/nodes/CreateNode";
+import CreateNodes from "./views/nodes/CreateNodes";
 import ActivateNode from "./views/nodes/ActivateNode";
 
 // channels
@@ -56,6 +57,7 @@ ReactDOM.render(
       <Route path="applications/create" component={CreateApplication}></Route>
       <Route path="applications/:applicationID/edit" component={UpdateApplication}></Route>
       <Route path="applications/:applicationID/nodes/create" component={CreateNode}></Route>
+      <Route path="applications/:applicationID/nodes/creates" component={CreateNodes}></Route>
       <Route path="applications/:applicationID/nodes/:devEUI/edit" component={UpdateNode}></Route>
       <Route path="applications/:applicationID/nodes/:devEUI/activation" component={ActivateNode}></Route>
       <Route path="applications/:applicationID/users" component={ApplicationUsers}></Route>
