@@ -19,7 +19,7 @@ appserver:
     - TEST_MQTT_SERVER=tcp://mosquitto:1883
     - HTTP_TLS_CERT=/etc/lora-app-server/certs/http.pem
     - HTTP_TLS_KEY=/etc/lora-app-server/certs/http-key.pem
-    - JWT_SECRET=o3+WsraaWjxA48KMxv6nxQZIPM2HWsbnh5/U7xLiK1Q=  
+    - JWT_SECRET=g7wiBF08gTBmIadMsH3bZlTOQ3mX2LLOjmn8O6Qg8CE=  
 
 postgres:
   image: postgres:9.5

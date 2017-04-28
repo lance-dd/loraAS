@@ -1,44 +1,38 @@
 import React, { Component } from 'react';
 
+import Dropzone from 'react-dropzone'
+
 class NodesForm extends Component {
   constructor() {
     super();
 
-    this.state = {
-      nodes: {}
-    };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+     this.state = { files: [] };
 
-  }
+      }
 
-  componentWillReceiveProps(nextProps){
-    let nodes = this.updateNodeSettings(nextProps.application, nextProps.node);
-
-    this.setState({
-      nodes: nodes });
+  onDrop(files) {
+   this.setState({files});
     }
 
-
-
-  handleSubmit(e) {
-    e.preventDefault();
-    let nodes = this.state.nodes;
-    this.props.onSubmit(nodes);
-}
-
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-      <div className="form-group">
-        上传excel表格:<input  type="file" name="xlfile" id="xlf" />
-          <button type="submit" className={"btn btn-primary pull-right " + (this.state.disabled ? 'hidden' : '')}>Submit</button>
-      </div>
-      </form>
-
-
-    );
-  }
+    return(
+      <section>
+        <div className="dropzone">
+          <Dropzone onDrop={this.onDrop.bind(this)}>
+            <p>Try dropping some files here, or click to select files to upload.</p>
+          </Dropzone>
+        </div>
+        <aside>
+          <h2>Dropped files</h2>
+          <ul>
+            {
+              this.state.files.map(f => <li>{f.name} - {f.size} bytes</li>)
+            }
+          </ul>
+        </aside>
+      </section>
+    );}
 }
 
 export default NodesForm;

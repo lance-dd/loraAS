@@ -46,7 +46,7 @@ class Createnodes extends Component {
         <hr />
         <div className="panel panel-default">
           <div className="panel-body">
-            <NodesForm nodes={this.state.nodesRows} application={this.state.application} onSubmit={this.onSubmit} />
+            <NodesForm   />
           </div>
         </div>
       </div>
